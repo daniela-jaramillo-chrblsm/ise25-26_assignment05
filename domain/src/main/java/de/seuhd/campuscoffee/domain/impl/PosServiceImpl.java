@@ -46,6 +46,12 @@ public class PosServiceImpl implements PosService {
     public @NonNull Pos getById(@NonNull Long id) throws PosNotFoundException {
         log.debug("Retrieving POS with ID: {}", id);
         return posDataService.getById(id);
+
+	@Override
+    public @NonNull Pos getByName(@NonNull String name) throws PosNotFoundException {
+        log.debug("Retrieving POS with name: {}", name);
+        return posDataService.getByName(name);
+    }
     }
 
     // TODO: Implement getByName after adding it to the PosService interface. Note that the PosDataService already supports filtering by name.
